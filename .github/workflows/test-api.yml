@@ -26,5 +26,5 @@ jobs:
 
             - name: ejecutar pruebas
               run: |
-                pytest tests/test1.py
+                pytest tests
     
