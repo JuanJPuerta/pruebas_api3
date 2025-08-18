@@ -24,12 +24,7 @@ jobs:
                 python -m pip install --upgrade pip
                 pip install -r ApiCandyModularizada-main-segura-main/requirements.txt
 
-            - name: migrar base de datos
-              env:
-                DJANGO_SETTINGS_MODULE: apiCandySoft.settings
-                PYTHONPATH: ${{ github.workspace }}/ApiCandyModularizada-main-segura-main
-              run: |
-                python ApiCandyModularizada-main-segura-main/manage.py migrate
+            
             
             - name: ejecutar pruebas
               env:
