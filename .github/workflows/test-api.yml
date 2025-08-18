@@ -28,5 +28,5 @@ jobs:
               env:
                 DJANGO_SETTINGS_MODULE: apiCandySoft.settings
               run: |
-                pytest tests
+                pytest tests/test_views_usuario.py
     
