@@ -25,6 +25,8 @@ jobs:
                 pip install -r ApiCandyModularizada-main-segura-main/requirements.txt
 
             - name: ejecutar pruebas
+              env:
+                DJANGO_SETTINGS_MODULE: apiCandySoft.settings
               run: |
                 pytest tests
     
