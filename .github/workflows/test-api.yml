@@ -27,6 +27,7 @@ jobs:
             - name: ejecutar pruebas
               env:
                 DJANGO_SETTINGS_MODULE: apiCandySoft.settings
+                PYTHONPATH: ${{ github.workspace }}/ApiCandyModularizada-main-segura-main
               run: |
                 pytest tests/test_views_usuario.py
     
