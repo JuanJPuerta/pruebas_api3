@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./ApiCandyModularizada-main-segura-main/apiCandySoft/usuario/views",
+        "./ApiCandyModularizada-main-segura-main"
+    ]
+}
