@@ -17,13 +17,13 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13.1'  # O la versión que uses
+          python-version: '3.11'
 
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Ejecutar pruebas con pytest
+      - name: Ejecutar pruebas
         run: |
           pytest tests/
