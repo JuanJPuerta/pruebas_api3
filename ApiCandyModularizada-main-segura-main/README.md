@@ -93,9 +93,38 @@ pip install -r requirements.txt
 
 4. Crear la base de datos en MySQL:
 - En una consulta de MYSQL colocar el siguiente script:
+
 CREATE DATABASE IF NOT EXISTS CandySoftApi2 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-5. Configurar la conexión a base de datos en `settings.py` o variables de entorno apuntando a la base creada.
+5. Configurar la conexión a base de datos.
+   -en tu prpyecto a debes crear un archivo llamado ".env" a la altura de tu archivo "manage.py" este archivo debe contener lo siguiente:
+   -  SEGURIDAD: 
+   SECRET_KEY= TU_CLAVE_SECRETA_GENERADA_POR_DJANGO
+   DEBUG=True
+      -  En caso de no tenerla o no saber cual es puedes generar una nueva con el siguiente comando: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+      Esto genrará una nueva clave secreta la cual puedes pegar en tu variable.
+
+   -  Base de Datos
+
+      DB_ENGINE=django.db.backends.mysql
+      DB_NAME='CandySoftApi2'
+      DB_USER=Tu_usuario
+      DB_PASSWORD=Tu_contraseña_de_mysql
+      DB_HOST=localhost
+      DB_PORT=3306
+
+
+   -  correo
+      EMAIL_HOST = 'smtp.gmail.com'
+      EMAIL_PORT = 587
+      EMAIL_USE_TLS = True
+      EMAIL_HOST_USER = 'tu_correo@gmail.com'
+      EMAIL_HOST_PASSWORD = 'tu_contraseña'
+
+   -API de subida de imagenes 
+   Debes crear una cuenta gratuita en imgBD para obtener un "API_KEY", que se utiliza para los servicios de subida de imagenes en lso servicios.
+
+   IMGBB_API_KEY = "tu_API_KEY"
 
 6. Ejecutar migraciones para crear las tablas necesarias:
 - En la terminal de VSC ejecutar el siguiente script:
@@ -103,6 +132,7 @@ CREATE DATABASE IF NOT EXISTS CandySoftApi2 CHARACTER SET utf8mb4 COLLATE utf8mb
 python manage.py migrate
 
 7. Ejecutar servidor local:
+
 python manage.py runserver
 
 
