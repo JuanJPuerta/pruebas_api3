@@ -6,6 +6,11 @@ from usuario.serializers.usuario import UsuarioSerializer
 # Para evitar enviar correos reales en test, puedes usar mock (de ser necesario)
 from unittest.mock import patch
 
+#sobelo
+
+
+
+
 
 @pytest.mark.django_db
 @patch('usuario.serializers.usuario.enviar_correo_bienvenida_empleado')
