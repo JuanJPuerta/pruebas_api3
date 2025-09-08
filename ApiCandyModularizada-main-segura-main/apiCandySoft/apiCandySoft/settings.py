@@ -115,19 +115,24 @@ DATABASES = {
 } """
 
 #base de datos 
+# Base de datos
 DATABASES = {
-    'default':{
+    'default': {
         'ENGINE': os.getenv("DB_ENGINE"),
         'NAME': os.getenv("DB_NAME"),
         'USER': os.getenv("DB_USER"),
         'PASSWORD': os.getenv("DB_PASSWORD"),
         'HOST': os.getenv("DB_HOST"),
         'PORT': os.getenv("DB_PORT"),
-        'OPTIONS': {
-    'charset' : 'utf8mb4',
-}
     }
 }
+
+# Si el motor es MySQL, agregar charset
+if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
+    DATABASES['default']['OPTIONS'] = {
+        'charset': 'utf8mb4',
+    }
+
 
 #parte de los emails o SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
